@@ -7,7 +7,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "npm run build --prod && npm run run sapient:server:production && node dist/sapient/server/main.js",
+    "start": "npm run build --prod && npm run sapient:server:production && node dist/sapient/server/main.js",
     "dev:ssr": "ng run sapient:serve-ssr",
     "serve:ssr": "node dist/sapient/server/main.js",
     "build:ssr": "ng build --prod && ng run sapient:server:production",
