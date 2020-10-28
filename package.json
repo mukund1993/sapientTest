@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "start": "ng build --prod && ng run sapient:server:production && node dist/sapient/server/main.js",
     "dev:ssr": "ng run sapient:serve-ssr",
     "serve:ssr": "node dist/sapient/server/main.js",
     "build:ssr": "ng build --prod && ng run sapient:server:production",
