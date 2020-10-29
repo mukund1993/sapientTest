@@ -7,7 +7,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:heroku": "npm run build --prod && ng run sapient:server:production && node dist/sapient/server/main.js", 
+    "start:heroku": "npm run build --prod && npm i -g @angular/cli && ng run sapient:server:production && npm run dist/sapient/server/main.js", 
     "start": "npm run build --prod && npm i -g @angular/cli && ng run sapient:server:production && node dist/sapient/server/main.js",
     "dev:ssr": "ng run sapient:serve-ssr",
     "serve:ssr": "node dist/sapient/server/main.js",
