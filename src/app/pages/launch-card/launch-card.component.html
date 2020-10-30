@@ -1,0 +1,36 @@
+<div class="col s3 m6">
+    <!-- {{launchObj |json}} -->
+    <div class="card space">
+        <div class="img">
+            <img *ngIf="launchObj.links.mission_patch; else elseblock" [src]="launchObj.links.mission_patch" [alt]="launchObj.mission_name">
+        
+            <ng-template #elseblock>
+              {{launchObj.mission_name}}
+              <div class="row center">
+                Image not available.
+              </div>
+            </ng-template>
+          </div>
+        <div class="container">
+          <h4><b>{{launchObj.mission_name}} #{{indexNo+1}}</b></h4> 
+          <div class="row">
+            <b>Mission Ids:</b>
+            <li class="row" *ngFor="let misionId of launchObj.mission_id ">
+               {{misionId}}
+            </li> 
+          </div>
+          <div class="row">
+            <b>Mission Ids:</b> {{launchObj.launch_year}}
+          </div>
+          <div class="row">
+            <b>Successful Launch:</b> {{launchObj.launch_success}}
+          </div>
+          <div class="row">
+
+            <b>Successful Landing:</b> {{launchObj.rocket.rocket_name}} {{ launchObj.rocket.rocket_type}} <ng-container *ngIf="launchObj.rocket.first_stage.cores[0].landing_type">landed on {{launchObj.rocket.first_stage.cores[0].landing_type}}</ng-container>
+          </div>
+        </div>
+      </div>
+
+</div>
+

@@ -1,0 +1,27 @@
+<div>
+    <div class="row">
+    SpaceX Launch Programs
+    </div>
+    <div class="row">
+        <div class="col s2 m4">
+            <div class="row">
+                Filters
+            </div>
+            <div class="row">
+                Launch Year
+            </div>
+            <div class="row">
+                Launch Years
+            </div>
+        </div>
+        <div class="col s10 m8">
+            <div class="row">
+                <ng-container *ngFor="let launch of spacexService.Launches; let i = index;">
+                <app-launch-card [launchObj]="launch" [indexNo]="i"></app-launch-card>
+                <div class="row" *ngIf=" spacexService.deviceInfo.divide !=0 && (i+1)%spacexService.deviceInfo.divide == 0" ></div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
