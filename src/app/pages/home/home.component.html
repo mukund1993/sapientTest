@@ -16,7 +16,7 @@
         </div>
         <div class="col s10 m8">
             <div class="row">
-                <ng-container *ngFor="let launch of spacexService.Launches; let i = index;">
+                <ng-container *ngFor="let launch of spacexService.Launches; let i = index;trackBy: trackById">
                 <app-launch-card [launchObj]="launch" [indexNo]="i"></app-launch-card>
                 <div class="row" *ngIf=" spacexService.deviceInfo.divide !=0 && (i+1)%spacexService.deviceInfo.divide == 0" ></div>
                 </ng-container>

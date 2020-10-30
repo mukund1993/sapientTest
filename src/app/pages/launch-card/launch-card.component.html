@@ -15,9 +15,11 @@
           <h4><b>{{launchObj.mission_name}} #{{indexNo+1}}</b></h4> 
           <div class="row">
             <b>Mission Ids:</b>
+            <ul>
             <li class="row" *ngFor="let misionId of launchObj.mission_id ">
                {{misionId}}
-            </li> 
+            </li>
+          </ul> 
           </div>
           <div class="row">
             <b>Mission Ids:</b> {{launchObj.launch_year}}
