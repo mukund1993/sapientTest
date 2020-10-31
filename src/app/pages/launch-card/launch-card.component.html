@@ -2,7 +2,10 @@
     <!-- {{launchObj |json}} -->
     <div class="card space">
         <div class="img">
-            <img *ngIf="launchObj.links.mission_patch; else elseblock" [src]="launchObj.links.mission_patch" [alt]="launchObj.mission_name">
+            <img 
+            width="100%"
+            height="auto"
+            *ngIf="launchObj.links.mission_patch; else elseblock" [src]="launchObj.links.mission_patch" [alt]="launchObj.mission_name">
         
             <ng-template #elseblock>
               {{launchObj.mission_name}}

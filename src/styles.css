@@ -8,6 +8,7 @@ html {
     margin: 0;
     padding: 0;
     background-color: #8080801a;
+    font: icon;
   }
   .center{
     text-align: center;

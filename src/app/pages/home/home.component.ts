@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexService } from 'src/app/service/spacex.service';
+import { ActivatedRoute } from '@angular/router';
+import { FilteConstructor, SpacexService } from 'src/app/service/spacex.service';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,26 @@ import { SpacexService } from 'src/app/service/spacex.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public spacexService: SpacexService) { 
-    this.spacexService.getLaunches();
+  constructor(public spacexService: SpacexService, private route: ActivatedRoute) { 
+    
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.spacexService.Filters = new FilteConstructor( params);
+      this.spacexService.getLaunches();
+    });
+  }
+  resetFilter(){
+    this.spacexService.Filters = new FilteConstructor();
+    this.spacexService.redirect();
+  }
+  filterChanged( filterKey, value){
+    this.spacexService.Filters[filterKey] = value;
+    this.spacexService.redirect();
   }
 
   trackById(index: number, item) {
     return item.id
-}
+  }
 }

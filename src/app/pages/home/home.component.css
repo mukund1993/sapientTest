@@ -1,0 +1,11 @@
+.chip{
+    padding: 4px 10px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    background: rgb(169, 233, 169);
+    display: inline-block;
+    cursor: pointer;
+}
+.active{
+    background: rgb(4, 185, 4);
+}
