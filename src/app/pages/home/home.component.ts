@@ -9,8 +9,8 @@ import { FilteConstructor, SpacexService } from 'src/app/service/spacex.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public spacexService: SpacexService, private route: ActivatedRoute) { 
-    
+  constructor(public spacexService: SpacexService, private route: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
@@ -19,16 +19,16 @@ export class HomeComponent implements OnInit {
       this.spacexService.getLaunches();
     });
   }
-  resetFilter(){
+  resetFilter() {
     this.spacexService.Filters = new FilteConstructor();
     this.spacexService.redirect();
   }
-  filterChanged( filterKey, value){
+  filterChanged( filterKey, value) {
     this.spacexService.Filters[filterKey] = value;
     this.spacexService.redirect();
   }
 
   trackById(index: number, item) {
-    return item.id
+    return item.id;
   }
 }

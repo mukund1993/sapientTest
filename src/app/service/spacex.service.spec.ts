@@ -7,11 +7,11 @@ import { SpacexService } from './spacex.service';
 
 describe('SpacexService', () => {
   let service: SpacexService;
-  let routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl'])
+  const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers:[{ provide: Router, useValue: routerSpy }, DeviceDetectorService]
+      providers: [{ provide: Router, useValue: routerSpy }, DeviceDetectorService]
     });
     service = TestBed.inject(SpacexService);
   });
@@ -22,5 +22,5 @@ describe('SpacexService', () => {
   it('check epicFunction', () => {
     expect(service.deviceInfo).toBeDefined();
   });
-  
+
 });
