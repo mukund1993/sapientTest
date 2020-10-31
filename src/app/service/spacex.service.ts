@@ -58,7 +58,6 @@ export class SpacexService {
     this.deviceInfo['divide'] = 0;
     isTablet ? this.deviceInfo['divide'] = 2 : null;
     isDesktopDevice ? this.deviceInfo['divide'] = 4 : null;
-    console.log(this.deviceInfo);
    }
 }
 
