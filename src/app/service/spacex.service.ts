@@ -16,7 +16,7 @@ export class SpacexService {
   constructor(private http: HttpClient, private deviceService: DeviceDetectorService , private router: Router) {
     this.epicFunction();
   }
-
+  public estimatedcommonHeight = -1;
   public getLaunches() {
     let query = '';
     if ( this.Filters.limit) {
@@ -37,8 +37,22 @@ export class SpacexService {
     this.http.get( apiHost + 'launches' + query).subscribe((res) => {
       if ( Array.isArray(res)) {
         this.Launches = res;
+        setTimeout( ()=>{
+          this.heightCalculate();
+        }, 10);
+
       }
     });
+  }
+
+  public heightCalculate(){
+    let height= 0;
+    document.querySelectorAll( "div.card.space").forEach( (element)=>{
+     if( height < element.clientHeight){
+      height = element.clientHeight;
+     }
+    })
+    this.estimatedcommonHeight = height;
   }
 
   public redirect() {

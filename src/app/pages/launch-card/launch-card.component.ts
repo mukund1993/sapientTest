@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SpacexService } from 'src/app/service/spacex.service';
 
 @Component({
   selector: 'app-launch-card',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LaunchCardComponent implements OnInit {
   @Input() launchObj;
   @Input() indexNo;
-  constructor() { }
+  constructor( public spacexService : SpacexService) { }
 
   ngOnInit(): void {
   }

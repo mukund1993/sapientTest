@@ -1,6 +1,6 @@
 <div class="col s3 m6">
     <!-- {{launchObj |json}} -->
-    <div class="card space">
+    <div class="card space" [style.min-height.px]="spacexService.estimatedcommonHeight">
         <div class="img">
             <img 
             width="100%"
@@ -32,7 +32,7 @@
           </div>
           <div class="row">
 
-            <b>Successful Landing:</b> {{launchObj.rocket.rocket_name}} {{ launchObj.rocket.rocket_type}} <ng-container *ngIf="launchObj.rocket.first_stage.cores[0].landing_type">landed on {{launchObj.rocket.first_stage.cores[0].landing_type}}</ng-container>
+            <b>Successful Landing:</b> {{launchObj.rocket.first_stage.cores[0].land_success}}
           </div>
         </div>
       </div>

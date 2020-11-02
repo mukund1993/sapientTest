@@ -8,7 +8,6 @@ import { FilteConstructor, SpacexService } from 'src/app/service/spacex.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   constructor(public spacexService: SpacexService, private route: ActivatedRoute) {
 
   }
@@ -31,4 +30,5 @@ export class HomeComponent implements OnInit {
   trackById(index: number, item) {
     return item.id;
   }
+
 }
